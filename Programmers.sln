@@ -15,6 +15,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "셔틀버스", "셔틀버�
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "숫자게임", "숫자게임\숫자게임.vcxproj", "{F45335B0-B0B0-45F2-8C2C-AC4453CA5901}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "기지국설치", "기지국설치\기지국설치.vcxproj", "{92D5EF49-6AFF-4BDA-AE47-B00A2B1BDCC8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -71,6 +73,14 @@ Global
 		{F45335B0-B0B0-45F2-8C2C-AC4453CA5901}.Release|x64.Build.0 = Release|x64
 		{F45335B0-B0B0-45F2-8C2C-AC4453CA5901}.Release|x86.ActiveCfg = Release|Win32
 		{F45335B0-B0B0-45F2-8C2C-AC4453CA5901}.Release|x86.Build.0 = Release|Win32
+		{92D5EF49-6AFF-4BDA-AE47-B00A2B1BDCC8}.Debug|x64.ActiveCfg = Debug|x64
+		{92D5EF49-6AFF-4BDA-AE47-B00A2B1BDCC8}.Debug|x64.Build.0 = Debug|x64
+		{92D5EF49-6AFF-4BDA-AE47-B00A2B1BDCC8}.Debug|x86.ActiveCfg = Debug|Win32
+		{92D5EF49-6AFF-4BDA-AE47-B00A2B1BDCC8}.Debug|x86.Build.0 = Debug|Win32
+		{92D5EF49-6AFF-4BDA-AE47-B00A2B1BDCC8}.Release|x64.ActiveCfg = Release|x64
+		{92D5EF49-6AFF-4BDA-AE47-B00A2B1BDCC8}.Release|x64.Build.0 = Release|x64
+		{92D5EF49-6AFF-4BDA-AE47-B00A2B1BDCC8}.Release|x86.ActiveCfg = Release|Win32
+		{92D5EF49-6AFF-4BDA-AE47-B00A2B1BDCC8}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
