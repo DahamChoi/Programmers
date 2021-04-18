@@ -19,7 +19,9 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "기지국설치", "기지�
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "스티커 모으기(2)", "스티커 모으기(2)\스티커 모으기(2).vcxproj", "{7093490E-4B8A-4E8D-AFBD-7967436436A1}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "2", "2\2.vcxproj", "{F3316E57-1346-4E6C-9E22-8FE86E2B509C}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "모두 0으로 만들기", "2\2.vcxproj", "{F3316E57-1346-4E6C-9E22-8FE86E2B509C}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "N-Queen", "N-Queen\N-Queen.vcxproj", "{3485E05A-E25B-4D5C-A868-FAB3B5CD5118}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -101,6 +103,14 @@ Global
 		{F3316E57-1346-4E6C-9E22-8FE86E2B509C}.Release|x64.Build.0 = Release|x64
 		{F3316E57-1346-4E6C-9E22-8FE86E2B509C}.Release|x86.ActiveCfg = Release|Win32
 		{F3316E57-1346-4E6C-9E22-8FE86E2B509C}.Release|x86.Build.0 = Release|Win32
+		{3485E05A-E25B-4D5C-A868-FAB3B5CD5118}.Debug|x64.ActiveCfg = Debug|x64
+		{3485E05A-E25B-4D5C-A868-FAB3B5CD5118}.Debug|x64.Build.0 = Debug|x64
+		{3485E05A-E25B-4D5C-A868-FAB3B5CD5118}.Debug|x86.ActiveCfg = Debug|Win32
+		{3485E05A-E25B-4D5C-A868-FAB3B5CD5118}.Debug|x86.Build.0 = Debug|Win32
+		{3485E05A-E25B-4D5C-A868-FAB3B5CD5118}.Release|x64.ActiveCfg = Release|x64
+		{3485E05A-E25B-4D5C-A868-FAB3B5CD5118}.Release|x64.Build.0 = Release|x64
+		{3485E05A-E25B-4D5C-A868-FAB3B5CD5118}.Release|x86.ActiveCfg = Release|Win32
+		{3485E05A-E25B-4D5C-A868-FAB3B5CD5118}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
