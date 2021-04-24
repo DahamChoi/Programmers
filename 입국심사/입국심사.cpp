@@ -37,7 +37,7 @@ long long solution(int n, vector<int> times) {
         answer = min_num;
     }
 
-    return answer;
+    return answer == LLONG_MAX ? time_limit : answer;
 }
 
 int main()
