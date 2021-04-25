@@ -1,20 +1,25 @@
-﻿#include <iostream>
-#include <vector>
+﻿#include <vector>
+#include <iostream>
+
 using namespace std;
 
 vector<int> solution(int n, int s) {
-    vector<int> answer;
-    vector<int> numbers(n);
+    if (n > s) {
+        return { -1 };
+    }
 
-    int max_number = 0;
-
-    for (int i = 0; i < n; i++) {
-
+    vector<int> answer(n, s / n);
+    for (int i = answer.size() - 1; i >= answer.size() - (s % n); i--) {
+        ++answer[i];
     }
 
     return answer;
 }
 
 int main() {
-    std::cout << solution(2, 8)[0];
+    vector<int> answer = solution(4, 9);
+    for (int i = 0; i < answer.size(); i++) {
+        cout << answer[i] << " ";
+    }
+    cout << endl;
 }
