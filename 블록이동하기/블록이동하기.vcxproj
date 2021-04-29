@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{49543947-32bb-44c3-9c2b-5bc3120e1c7b}</ProjectGuid>
-    <RootNamespace>카드짝맞추기</RootNamespace>
+    <ProjectGuid>{49afd42e-11cf-4075-9db2-8cb24045a3c1}</ProjectGuid>
+    <RootNamespace>블록이동하기</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -139,8 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="소스.cpp" />
-    <ClCompile Include="카드짝 맞추기.cpp" />
+    <ClCompile Include="블록이동하기.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
