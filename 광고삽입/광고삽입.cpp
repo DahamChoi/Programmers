@@ -1,76 +1,43 @@
 ﻿#include <string>
 #include <vector>
 #include <iostream>
-#include <algorithm>
 
 using namespace std;
 
-struct log_class {
-    int st_second, ed_second;
-
-    int get_time(int st, int ed) {
-        int start = st_second, end = ed_second;
-        if (ed_second > ed) {
-            end = ed;
-        }
-        if (st_second < st) {
-            start = st;
-        }
-
-        if (end - start > 0) {
-            return end - start;
-        }
-        else {
-            return 0;
-        }
-    }
-};
+int get_second_by_string(string str) {
+    return atoi(str.substr(0, 2).c_str()) * 60 * 60 +
+        atoi(str.substr(3, 2).c_str()) * 60 +
+        atoi(str.substr(6, 2).c_str());
+}
 
 string solution(string play_time, string adv_time, vector<string> logs) {
-    string answer = "";
+    int adv_time_second = get_second_by_string(adv_time);
+    int play_time_second = get_second_by_string(play_time);
+    vector<unsigned long long> time_table(play_time_second + 1);
 
-    if (play_time == adv_time) {
-        return "00:00:00";
-    }
-
-    int play_time_second =
-        atoi(string(adv_time.begin(), adv_time.begin() + 3).c_str()) * 60 * 60 +
-        atoi(string(adv_time.begin() + 3, adv_time.begin() + 6).c_str()) * 60 +
-        atoi(string(adv_time.begin() + 6, adv_time.begin() + 9).c_str());
-
-    vector<log_class> log_list;
     for (auto& it : logs) {
-        log_list.push_back({
-            atoi(string(it.begin(),it.begin() + 3).c_str()) * 60 * 60 +
-            atoi(string(it.begin() + 3, it.begin() + 6).c_str()) * 60 +
-            atoi(string(it.begin() + 6, it.begin() + 9).c_str()),
-            atoi(string(it.begin() + 9,it.begin() + 12).c_str()) * 60 * 60 +
-            atoi(string(it.begin() + 12, it.begin() + 15).c_str()) * 60 +
-            atoi(string(it.begin() + 15, it.begin() + 18).c_str())
-            });
+        int st_time = get_second_by_string(it.substr(0, 8));
+        int ed_time = get_second_by_string(it.substr(9, 8));
+        for (int i = st_time + 1; i <= ed_time; i++) {
+            ++time_table[i];
+        }
     }
 
-    sort(log_list.begin(), log_list.end(), [](const log_class& c1, const log_class& c2) {
-        return c1.st_second < c2.st_second;
-        });
+    for (int i = 1; i < time_table.size(); i++) {
+        time_table[i] += time_table[i - 1];
+    }
 
-    int max_sum_of_time = 0, max_time = 0;
-    for (int i = 0; i < log_list.size(); i++) {
-        int adv_time = log_list[i].st_second;
-        int adv_end_time = adv_time + play_time_second;
-        int sum_of_time = 0;
-        for (int j = 0; j < log_list.size(); j++) {
-            if (log_list[j].st_second > adv_end_time) {
-                break;
-            }
-
-            sum_of_time += log_list[j].get_time(adv_time, adv_end_time);
+    unsigned long long max_time = 0, max_value = 0;
+    for (int i = adv_time_second; i < time_table.size(); i++) {
+        unsigned long long st_time = i - adv_time_second;
+        if (time_table[i] - time_table[st_time] > max_value) {
+            max_value = time_table[i] - time_table[st_time];
+            max_time = st_time;
         }
+    }
 
-        if (sum_of_time > max_sum_of_time) {
-            max_sum_of_time = sum_of_time;
-            max_time = adv_time;
-        }
+    if (max_time > play_time_second - adv_time_second) {
+        max_time = play_time_second - adv_time_second;
     }
 
     string hour_str = to_string(max_time / 60 / 60);
@@ -86,12 +53,12 @@ string solution(string play_time, string adv_time, vector<string> logs) {
         second_str.insert(second_str.begin(), '0');
     }
 
-    answer = hour_str + ":" + min_str + ":" + second_str;
-
-    return answer;
+    return hour_str + ":" + min_str + ":" + second_str;
 }
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    std::cout << solution("99:59:59", "25:00:00", { "69:59:59-89:59:59", "01:00:00-21:00:00", "79:59:59-99:59:59", "11:00:00-31:00:00" });
+
+    return 0;
 }
