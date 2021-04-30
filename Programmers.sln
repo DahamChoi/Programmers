@@ -63,6 +63,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "튜플", "튜플\튜플.vcx
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "N진수게임", "N진수게임\N진수게임.vcxproj", "{183C060F-9F4B-4F11-8CFA-6F62BBC175AD}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "후보키", "후보키\후보키.vcxproj", "{E6A87410-9966-401B-9881-5894124C8BB0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -311,6 +313,14 @@ Global
 		{183C060F-9F4B-4F11-8CFA-6F62BBC175AD}.Release|x64.Build.0 = Release|x64
 		{183C060F-9F4B-4F11-8CFA-6F62BBC175AD}.Release|x86.ActiveCfg = Release|Win32
 		{183C060F-9F4B-4F11-8CFA-6F62BBC175AD}.Release|x86.Build.0 = Release|Win32
+		{E6A87410-9966-401B-9881-5894124C8BB0}.Debug|x64.ActiveCfg = Debug|x64
+		{E6A87410-9966-401B-9881-5894124C8BB0}.Debug|x64.Build.0 = Debug|x64
+		{E6A87410-9966-401B-9881-5894124C8BB0}.Debug|x86.ActiveCfg = Debug|Win32
+		{E6A87410-9966-401B-9881-5894124C8BB0}.Debug|x86.Build.0 = Debug|Win32
+		{E6A87410-9966-401B-9881-5894124C8BB0}.Release|x64.ActiveCfg = Release|x64
+		{E6A87410-9966-401B-9881-5894124C8BB0}.Release|x64.Build.0 = Release|x64
+		{E6A87410-9966-401B-9881-5894124C8BB0}.Release|x86.ActiveCfg = Release|Win32
+		{E6A87410-9966-401B-9881-5894124C8BB0}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
