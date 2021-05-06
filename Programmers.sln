@@ -127,6 +127,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "2Xn타일링", "2Xn타일�
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "정수삼각형", "정수삼각형\정수삼각형.vcxproj", "{39DF8E68-2BAF-4238-A901-79A7021A0C75}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "네트워크", "네트워크\네트워크.vcxproj", "{5C93386B-7F40-44CA-9CA6-3EDCC7A986DB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -631,6 +633,14 @@ Global
 		{39DF8E68-2BAF-4238-A901-79A7021A0C75}.Release|x64.Build.0 = Release|x64
 		{39DF8E68-2BAF-4238-A901-79A7021A0C75}.Release|x86.ActiveCfg = Release|Win32
 		{39DF8E68-2BAF-4238-A901-79A7021A0C75}.Release|x86.Build.0 = Release|Win32
+		{5C93386B-7F40-44CA-9CA6-3EDCC7A986DB}.Debug|x64.ActiveCfg = Debug|x64
+		{5C93386B-7F40-44CA-9CA6-3EDCC7A986DB}.Debug|x64.Build.0 = Debug|x64
+		{5C93386B-7F40-44CA-9CA6-3EDCC7A986DB}.Debug|x86.ActiveCfg = Debug|Win32
+		{5C93386B-7F40-44CA-9CA6-3EDCC7A986DB}.Debug|x86.Build.0 = Debug|Win32
+		{5C93386B-7F40-44CA-9CA6-3EDCC7A986DB}.Release|x64.ActiveCfg = Release|x64
+		{5C93386B-7F40-44CA-9CA6-3EDCC7A986DB}.Release|x64.Build.0 = Release|x64
+		{5C93386B-7F40-44CA-9CA6-3EDCC7A986DB}.Release|x86.ActiveCfg = Release|Win32
+		{5C93386B-7F40-44CA-9CA6-3EDCC7A986DB}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
