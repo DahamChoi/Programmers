@@ -5,61 +5,41 @@
 
 using namespace std;
 
-struct Node {
-    int value, index;
-    vector<int> edges;
+struct edge {
+    long long value{ 0 }, index{ 0 };
+    vector<edge*> nodes;
 };
 
-long long solution(vector<int> a, vector<vector<int>> edges) {
-    long long answer = 0;
+vector<edge*> edge_list;
+long long answer = 0, sum = 0;
 
-    vector<Node*> graph(a.size());
-    for (int i = 0; i < graph.size(); i++) {
-        graph[i] = new Node();
-        graph[i]->value = a[i];
-        graph[i]->index = i;
+void dfs2(int from, int to) {
+    for (auto it : edge_list[to]->nodes) {
+        if (it->index != from) {
+            dfs2(to, it->index);
+        }
+    }
+
+    edge_list[from]->value += edge_list[to]->value;
+    answer += abs(edge_list[to]->value);
+}
+
+long long solution(vector<int> a, vector<vector<int>> edges) {
+    for (int i = 0; i < a.size(); i++) {
+        edge_list.push_back(new edge{ a[i], i });
+        sum += a[i];
+    }
+
+    if (sum != 0) {
+        return -1;
     }
 
     for (int i = 0; i < edges.size(); i++) {
-        graph[edges[i][0]]->edges.push_back(edges[i][1]);
-        graph[edges[i][1]]->edges.push_back(edges[i][0]);
+        edge_list[edges[i][0]]->nodes.push_back(edge_list[edges[i][1]]);
+        edge_list[edges[i][1]]->nodes.push_back(edge_list[edges[i][0]]);
     }
 
-    Node* curNode = graph[0];
-    for (int i = 0; i < graph.size(); i++) {
-        if (graph[i]->edges.size() == 1) {
-            curNode = graph[i];
-            break;
-        }
-    }
-
-    while (true) {
-        if (curNode->edges.size() == 1) {
-            if (curNode->value < 0){
-                answer += -curNode->value;
-                graph[curNode->edges[0]]->value -= abs(curNode->value);
-                curNode->value = 0;
-            } else if (curNode->value > 0) {
-                answer += curNode->value;
-                graph[curNode->edges[0]]->value += abs(curNode->value);
-                curNode->value = 0;
-            }
-
-            graph[curNode->edges[0]]->edges.erase(find(graph[curNode->edges[0]]->edges.begin(), graph[curNode->edges[0]]->edges.end(), curNode->index));
-            curNode = graph[curNode->edges[0]];
-        }
-        else if(curNode->edges.size() > 1) {
-            if (graph[curNode->edges[0]]->edges.size() < graph[curNode->edges[1]]->edges.size()) {
-                curNode = graph[curNode->edges[0]];
-            }
-            else {
-                curNode = graph[curNode->edges[1]];
-            }
-        }
-        else {
-            break;
-        }
-    }
+    dfs2(0, 0);
 
     return answer;
 }
